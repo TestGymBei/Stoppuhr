@@ -1,8 +1,10 @@
-
 #include <stdio.h>
 #include <time.h>
+#include <windows.h>
 
 int main () {
+
+	unsigned sleep(unsigned seconds);
 
 	time_t startzeit, endzeit;
 	double diffzeit;
@@ -12,14 +14,14 @@ int main () {
 
 	scanf("Stoppuhr starten? (y/n) %c\n", &e);
 
-	if (e == y){
+	if (e == 'y'){
 
 		time(&startzeit);
-		scanf("Zeit gestartet. Zum Stoppen s druecken.\n", &stopp);
+		scanf("Zeit gestartet. Zum Stoppen s druecken. %c\n", &stopp);
 
 		do{
 			sleep(1);
-		}while(stopp != s);
+		}while(stopp != 's');
 
 		time(&endzeit);
 
@@ -29,7 +31,7 @@ int main () {
 
 	}
 
-	else if (e == n){
+	else if (e == 'n'){
 		printf("dann eben nicht - auf Wiedersehen!");
 	}
 
